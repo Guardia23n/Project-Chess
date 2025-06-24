@@ -1,9 +1,11 @@
 package com.projectChess;
 
-public class Knight extends Piece{
+import com.projectChess.piece.Piece;
+
+public class Knight extends Piece {
     Color color;
     Coordinates coordinates;
-    public Knight() {
-        
+    public Knight(Color color, Coordinates coordinates) {
+        super(color, coordinates);
     }
 }
