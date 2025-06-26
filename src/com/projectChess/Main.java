@@ -1,7 +1,5 @@
 package com.projectChess;
 
-import com.projectChess.piece.BoardConsolRenderer;
-
 public class Main {
     public static void main(String[] args) {
         Board board = new Board();

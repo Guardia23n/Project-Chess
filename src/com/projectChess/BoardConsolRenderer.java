@@ -1,10 +1,5 @@
-package com.projectChess.piece;
-
-import com.projectChess.Board;
-import com.projectChess.Color;
-import com.projectChess.Coordinates;
-import com.projectChess.File;
-
+package com.projectChess;
+import com.projectChess.piece.Piece;
 
 
 public class BoardConsolRenderer {
@@ -59,22 +54,22 @@ public class BoardConsolRenderer {
     private String selectUnicodeSpriteForPiece(Piece piece){
         switch (piece.getClass().getSimpleName()) {
             case "Pawn":
-                return "♟︎";
+                return "P"; //♟
 
             case "Knight":
-                return "♞";
+                return "T"; // ♞
 
             case "Bishop":
-                return "♝";
+                return "B"; // ♝
 
             case "Rook":
-                return "♜";
+                return "R"; // ♜
 
             case "Queen":
-                return "♛";
+                return "Q"; // ♛
 
             case "King":
-                return "♚";
+                return "K"; // ♚
         }
 
         return "";
@@ -82,7 +77,7 @@ public class BoardConsolRenderer {
 
     private String getPieceSprite (Piece piece){
         return colorizeSprite(
-                " " + selectUnicodeSpriteForPiece(piece) + " ", piece.color, Board.isSquereDark(piece.coordinates)
+                " " + selectUnicodeSpriteForPiece(piece) + " ", piece.color, Board.isSquereDark(piece.coordinates )
         );
     }
 }
