@@ -57,7 +57,27 @@ public class BoardConsolRenderer {
     }
 
     private String selectUnicodeSpriteForPiece(Piece piece){
-        return "P";
+        switch (piece.getClass().getSimpleName()) {
+            case "Pawn":
+                return "♟︎";
+
+            case "Knight":
+                return "♞";
+
+            case "Bishop":
+                return "♝";
+
+            case "Rook":
+                return "♜";
+
+            case "Queen":
+                return "♛";
+
+            case "King":
+                return "♚";
+        }
+
+        return "";
     }
 
     private String getPieceSprite (Piece piece){
