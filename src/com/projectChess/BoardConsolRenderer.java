@@ -62,7 +62,7 @@ public class BoardConsolRenderer {
             case "Bishop":
                 return "B"; // ♝
 
-            case "Rook":
+            case "Rock":
                 return "R"; // ♜
 
             case "Queen":

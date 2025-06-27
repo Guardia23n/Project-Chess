@@ -1,5 +1,9 @@
 package com.projectChess;
 
+import com.projectChess.piece.Piece;
+
+import java.util.Set;
+
 public class Main {
     public static void main(String[] args) {
         Board board = new Board();
@@ -8,7 +12,10 @@ public class Main {
         BoardConsolRenderer renderer = new BoardConsolRenderer();
         renderer.render(board);
 
-        int a = 123; //debug, created for parameters control
+        Piece piece = board.getPiece(new Coordinates(File.B,1));
+        Set<Coordinates> avaiblableMoveSquares = piece.getAvailableMoveSquares(board);
+
+        int a = 123;
 
     }
 }
