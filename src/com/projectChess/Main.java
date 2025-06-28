@@ -6,9 +6,10 @@ import java.util.Set;
 
 public class Main {
     public static void main(String[] args) {
+
         Board board = new Board();
         board.setupDefaultPiecesPositions();
-
+/*
         BoardConsolRenderer renderer = new BoardConsolRenderer();
         renderer.render(board);
 
@@ -16,6 +17,10 @@ public class Main {
         Set<Coordinates> avaiblableMoveSquares = piece.getAvailableMoveSquares(board);
 
         int a = 123;
+
+ */
+        Game game = new Game(board);
+        game.gameloop();
 
     }
 }
