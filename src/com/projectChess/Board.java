@@ -12,6 +12,16 @@ public class Board {
         pieces.put(coordinates, piece);
     }
 
+    public void removePieace(Coordinates coordinates){
+        pieces.remove(coordinates);
+    }
+    public void  movePiece(Coordinates from, Coordinates to){
+        Piece piece = getPiece(from);
+
+        removePieace(from);
+        setPieces(to, piece);
+    }
+
     public boolean isSquereEmpty(Coordinates coordinates){
         return !pieces.containsKey(coordinates);
     }
