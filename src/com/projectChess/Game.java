@@ -13,6 +13,7 @@ public class Game {
 
         while (true){
             renderer.render(board);
+            
             isWhiteToMove =! isWhiteToMove;
         }
     }
