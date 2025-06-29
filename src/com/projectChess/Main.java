@@ -7,11 +7,15 @@ import java.util.Set;
 public class Main {
     public static void main(String[] args) {
 
-        Board board = new Board();
-        board.setupDefaultPiecesPositions();
-/*
+        //Board board = new Board();
+        //board.setupDefaultPiecesPositions();
+
+        Board board = (new BoardFactory().fromFEN("rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0  1"));
+
         BoardConsolRenderer renderer = new BoardConsolRenderer();
         renderer.render(board);
+/*
+
 
         Piece piece = board.getPiece(new Coordinates(File.B,1));
         Set<Coordinates> avaiblableMoveSquares = piece.getAvailableMoveSquares(board);
@@ -19,8 +23,8 @@ public class Main {
         int a = 123;
 
  */
-        Game game = new Game(board);
-        game.gameloop();
+        //Game game = new Game(board);
+        //game.gameloop();
 
     }
 }
