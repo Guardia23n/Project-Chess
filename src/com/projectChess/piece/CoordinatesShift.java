@@ -8,4 +8,5 @@ public class CoordinatesShift {
         this.fileShift = fileShift;
         this.rankShift = rankShift;
     }
+
 }
