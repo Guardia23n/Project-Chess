@@ -14,7 +14,8 @@ public class Main {
                 //"rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0  1"
                 //"r3kb1r/7p/8/2p2p1n/1P2PP2/1N4N1/P1B5/R2Q4 b KQkq - 0 1"
                 //"4k3/8/5n2/2N5/3B4/8/8/4K3 b KQkq - 0 1"
-                "4k3/8/p7/8/R7/8/P7/4K3 b KQkq - 0 1"
+                //"4k3/8/p5n1/5B2/R7/3P4/P7/4K3 w - - 0 1"
+                "4k3/8/6r1/8/1P2Q3/8/4r1B1/3K4 b - - 0 1"
 
         ));
 
