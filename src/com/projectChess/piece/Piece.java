@@ -10,33 +10,33 @@ abstract public class Piece {
     public final Color color;
     public Coordinates coordinates;
 
-    public Piece(Color color, Coordinates coordinates){
+    public Piece(Color color, Coordinates coordinates) {
         this.color = color;
         this.coordinates = coordinates;
     }
 
-   public Set<Coordinates> getAvailableMoveSquares (Board board){
+    public Set<Coordinates> getAvailableMoveSquares(Board board) {
         Set<Coordinates> result = new HashSet<>();
 
-        for (CoordinatesShift shift: getPieceMoves()){
-            if(coordinates.canShift(shift)){
+        for (CoordinatesShift shift : getPieceMoves()) {
+            if (coordinates.canShift(shift)) {
                 Coordinates newCoordinates = coordinates.shift(shift);
 
-                if(isSquareAvailebleForMove(newCoordinates, board)){
+                if (isSquareAvailableForMove(newCoordinates, board)) {
                     result.add(newCoordinates);
                 }
             }
         }
-        return result;
-   }
 
-   protected boolean isSquareAvailebleForMove(Coordinates coordinates, Board board){
-        return board.isSquereEmpty(coordinates) || board.getPiece(coordinates).color !=color;
-   }
+        return result;
+    }
+
+    protected boolean isSquareAvailableForMove(Coordinates coordinates, Board board) {
+        return board.isSquareEmpty(coordinates) || board.getPiece(coordinates).color != color;
+    }
 
     protected abstract Set<CoordinatesShift> getPieceMoves();
-
-    protected Set<CoordinatesShift> getPieceAttacks(){
+    protected Set<CoordinatesShift> getPieceAttacks() {
         return getPieceMoves();
     }
 
@@ -44,19 +44,20 @@ abstract public class Piece {
         Set<CoordinatesShift> pieceAttacks = getPieceAttacks();
         Set<Coordinates> result = new HashSet<>();
 
-        for (CoordinatesShift pieceAttack : pieceAttacks){
-            if(coordinates.canShift(pieceAttack)){
-                Coordinates shiftCoordinates = coordinates.shift((pieceAttack));
+        for (CoordinatesShift pieceAttack : pieceAttacks) {
+            if (coordinates.canShift(pieceAttack)) {
+                Coordinates shiftedCoordinates = coordinates.shift(pieceAttack);
 
-                if(isSquareAvailebleForAttack(shiftCoordinates, board)){
-                    result.add(shiftCoordinates);
+                if (isSquareAvailableForAttack(shiftedCoordinates, board)) {
+                    result.add(shiftedCoordinates);
                 }
             }
         }
+
         return result;
     }
 
-    private boolean isSquareAvailebleForAttack(Coordinates coordinates, Board board) {
+    protected boolean isSquareAvailableForAttack(Coordinates coordinates, Board board) {
         return true;
     }
 }

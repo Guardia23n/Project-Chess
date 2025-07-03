@@ -31,8 +31,8 @@ public class King extends Piece {
     }
 
     @Override
-    protected boolean isSquareAvailebleForMove(Coordinates coordinates, Board board) {
-        boolean result = super.isSquareAvailebleForMove(coordinates, board);
+    protected boolean isSquareAvailableForMove(Coordinates coordinates, Board board) {
+        boolean result = super.isSquareAvailableForMove(coordinates, board);
 
         if (result) {
             return !board.isSquareAttackedByColor(coordinates, color.opposite());

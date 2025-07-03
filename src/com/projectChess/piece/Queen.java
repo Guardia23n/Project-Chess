@@ -6,7 +6,7 @@ import com.projectChess.Coordinates;
 import java.util.Set;
 
 
-public class Queen extends LongRangePiece implements IBishop, IRock{
+public class Queen extends LongRangePiece implements IBishop, IRook {
     public Queen(Color color, Coordinates coordinates) {
         super(color, coordinates);
     }

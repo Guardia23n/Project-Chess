@@ -15,17 +15,17 @@ public class Board {
         pieces.put(coordinates, piece);
     }
 
-    public void removePieace(Coordinates coordinates){
+    public void removePiece(Coordinates coordinates){
         pieces.remove(coordinates);
     }
     public void  movePiece(Coordinates from, Coordinates to){
         Piece piece = getPiece(from);
 
-        removePieace(from);
+        removePiece(from);
         setPieces(to, piece);
     }
 
-    public boolean isSquereEmpty(Coordinates coordinates){
+    public boolean isSquareEmpty(Coordinates coordinates){
         return !pieces.containsKey(coordinates);
     }
 

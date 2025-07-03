@@ -52,7 +52,7 @@ public class InputCoordinates {
                 System.out.println("Enter coordinates for a piece to move");
                 Coordinates coordinates = input();
 
-                if(board.isSquereEmpty(coordinates)){
+                if(board.isSquareEmpty(coordinates)){
                     System.out.println("Empty square");
                     continue;
                 }

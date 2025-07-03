@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class BoardUtils {
-    public static List<Coordinates> getDiagnalsCoordinatesBetween(Coordinates source, Coordinates target){
+    public static List<Coordinates> getDiagonalCoordinatesBetween(Coordinates source, Coordinates target){
         //square on one diagonal
         List<Coordinates> result = new ArrayList<>();
 

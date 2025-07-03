@@ -3,7 +3,7 @@ package com.projectChess.piece;
 import java.util.HashSet;
 import java.util.Set;
 
-public interface IRock {
+public interface IRook {
     default Set<CoordinatesShift> getRockMoves(){
         Set<CoordinatesShift> result = new HashSet<>();
         //left to right

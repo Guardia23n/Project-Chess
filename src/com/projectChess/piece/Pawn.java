@@ -39,11 +39,26 @@ public class Pawn extends Piece {
     }
 
     @Override
-    protected boolean isSquareAvailebleForMove(Coordinates coordinates, Board board) {
-        if(this.coordinates.file == coordinates.file){
-            return board.isSquereEmpty(coordinates);
+    protected Set<CoordinatesShift> getPieceAttacks() {
+        Set<CoordinatesShift> result = new HashSet<>();
+
+        if (color == Color.WHITE) {
+            result.add(new CoordinatesShift(-1, 1));
+            result.add(new CoordinatesShift(1, 1));
         } else {
-            if(board.isSquereEmpty(coordinates)){
+            result.add(new CoordinatesShift(-1, -1));
+            result.add(new CoordinatesShift(1, -1));
+        }
+
+        return result;
+    }
+
+    @Override
+    protected boolean isSquareAvailableForAttack(Coordinates coordinates, Board board) {
+        if(this.coordinates.file == coordinates.file){
+            return board.isSquareEmpty(coordinates);
+        } else {
+            if(board.isSquareEmpty(coordinates)){
                 return false;
             } else {
                 return board.getPiece(coordinates).color != color;

@@ -30,7 +30,7 @@ public class BoardConsolRenderer {
                 Coordinates coordinates = new Coordinates(file, rank);
                 boolean isHighlight = availableMoveSquares.contains(coordinates);
 
-                if (board.isSquereEmpty(coordinates)){
+                if (board.isSquareEmpty(coordinates)){
                     line += getSpringForEmptySquere(coordinates, isHighlight);
                 } else {
                     line += getPieceSprite(board.getPiece(coordinates), isHighlight);
