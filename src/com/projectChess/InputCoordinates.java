@@ -86,6 +86,20 @@ public class InputCoordinates {
         }
 
         }
+        public static Move inputMove(Board board, Color color, BoardConsolRenderer renderer){
+        Coordinates sourceCoordinates = InputCoordinates.inputPieceCoordinatesForColor
+                (color, board
+                );
+
+        Piece piece = board.getPiece(sourceCoordinates);
+        Set<Coordinates> availableMoveSquares = piece.getAvailableMoveSquares(board);
+
+
+        renderer.render(board, piece);
+        Coordinates targetCoordinates = InputCoordinates.inputAvailableSquare(availableMoveSquares);
+
+        return new Move(sourceCoordinates, targetCoordinates);
+    }
             public static void main(String[] args){
                 Board board = new Board();
                 board.setupDefaultPiecesPositions();

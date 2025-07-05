@@ -96,4 +96,11 @@ public class Board {
         }
         return result;
     }
+
+    public void makeMove(Move move) {
+        Piece piece = getPiece(move.from);
+
+        removePiece(move.from);
+        setPieces(move.to, piece);
+    }
 }
