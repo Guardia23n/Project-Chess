@@ -1,4 +1,6 @@
-package com.projectChess;
+package com.projectChess.board;
+
+import com.projectChess.Coordinates;
 
 public class Move {
     public final Coordinates from, to;

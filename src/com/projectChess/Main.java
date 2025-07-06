@@ -1,8 +1,7 @@
 package com.projectChess;
 
-import com.projectChess.piece.Piece;
-
-import java.util.Set;
+import com.projectChess.board.Board;
+import com.projectChess.board.BoardFactory;
 
 public class Main {
     public static void main(String[] args) {

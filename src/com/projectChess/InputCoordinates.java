@@ -1,5 +1,9 @@
 package com.projectChess;
 
+import com.projectChess.board.Board;
+import com.projectChess.board.BoardFactory;
+import com.projectChess.board.Move;
+import com.projectChess.piece.King;
 import com.projectChess.piece.Piece;
 
 import java.util.Scanner;
@@ -86,26 +90,36 @@ public class InputCoordinates {
         }
 
         }
-        public static Move inputMove(Board board, Color color, BoardConsolRenderer renderer){
-        Coordinates sourceCoordinates = InputCoordinates.inputPieceCoordinatesForColor
-                (color, board
-                );
+        public static Move inputMove(Board board, Color color, BoardConsolRenderer renderer) {
+            while (true) {
+                Coordinates sourceCoordinates = InputCoordinates.inputPieceCoordinatesForColor
+                        (color, board
+                        );
 
-        Piece piece = board.getPiece(sourceCoordinates);
-        Set<Coordinates> availableMoveSquares = piece.getAvailableMoveSquares(board);
+                Piece piece = board.getPiece(sourceCoordinates);
+                Set<Coordinates> availableMoveSquares = piece.getAvailableMoveSquares(board);
 
 
-        renderer.render(board, piece);
-        Coordinates targetCoordinates = InputCoordinates.inputAvailableSquare(availableMoveSquares);
+                renderer.render(board, piece);
+                Coordinates targetCoordinates = InputCoordinates.inputAvailableSquare(availableMoveSquares);
 
-        return new Move(sourceCoordinates, targetCoordinates);
-    }
-            public static void main(String[] args){
-                Board board = new Board();
-                board.setupDefaultPiecesPositions();
+                Move move = new Move(sourceCoordinates, targetCoordinates);
 
-       Coordinates coordinates = inputPieceCoordinatesForColor(Color.WHITE,board);
-       System.out.println(coordinates);
+                if (validateIfKingInCheckAfterMove(board, color, move)) {
+                    System.out.println("Your king is under attack!");
+                    continue;
+                }
 
+                return move;
+            }
+        }
+
+    private static boolean validateIfKingInCheckAfterMove(Board board, Color color, Move move) {
+        Board copy = (new BoardFactory()).copy(board);
+        copy.makeMove(move);
+
+        //we trust that there is king on the board
+        Piece king = copy.getPiecesByColor(color).stream().filter(piece -> piece instanceof King).findFirst().get();
+        return copy.isSquareAttackedByColor(king.coordinates,color.opposite());
     }
 }

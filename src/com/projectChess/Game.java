@@ -1,8 +1,7 @@
 package com.projectChess;
 
-import com.projectChess.piece.Piece;
-
-import java.util.Set;
+import com.projectChess.board.Board;
+import com.projectChess.board.Move;
 
 public class Game {
     private final Board board;
