@@ -1,5 +1,23 @@
+### *** ###
+*.class
+*.log
+*.tmp
+*.swp
+*~
+
+### IDE ###
+.idea/
+*.iml
+.vscode/
+
+### System files ###
+.DS_Store
+Thumbs.db
+
 ### IntelliJ IDEA ###
 out/
+bin/
+build/
 !**/src/main/**/out/
 !**/src/test/**/out/
 
