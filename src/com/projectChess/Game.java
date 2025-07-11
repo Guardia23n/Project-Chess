@@ -12,7 +12,10 @@ public class Game {
 
     private BoardConsolRenderer renderer = new BoardConsolRenderer();
     private InputCoordinates inputCoordinates = new InputCoordinates();
-    private final List<GameStateChecker> checkers = List.of(new StalemateGameStateChecker());
+    private final List<GameStateChecker> checkers = List.of(
+            new StalemateGameStateChecker(),
+            new CheckMatGameStateChecker()
+            );
 
     protected Game(Board board){
         this.board = board;

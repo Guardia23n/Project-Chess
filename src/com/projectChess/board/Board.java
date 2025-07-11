@@ -12,7 +12,7 @@ import java.util.Set;
 
 public class Board {
     public final String startingFen;
-    public HashMap<Coordinates, Piece> pieces = new HashMap<>();
+    private HashMap<Coordinates, Piece> pieces = new HashMap<>();
 
     public List<Move> moves = new ArrayList<>();
 

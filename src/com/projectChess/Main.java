@@ -10,7 +10,7 @@ public class Main {
         //board.setupDefaultPiecesPositions();
 
         Board board = (new BoardFactory().fromFEN(
-                //"rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0  1"
+                "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0  1"
                 //"r3kb1r/7p/8/2p2p1n/1P2PP2/1N4N1/P1B5/R2Q4 b KQkq - 0 1"
                 //"4k3/8/5n2/2N5/3B4/8/8/4K3 b KQkq - 0 1"
                 //"4k3/8/p5n1/5B2/R7/3P4/P7/4K3 w - - 0 1"
@@ -23,7 +23,8 @@ public class Main {
                 //"k4r2/2Q5/8/r7/4KN2/2q1N3/8/8 b - - 0 1"
                 //"k7/8/4p3/8/4K3/8/8/8 b - - 0 1"
                 //"3k4/8/8/b7/8/8/2PK4/6N1 b - - 0 1"
-                "8/8/8/8/6p1/3k1pP1/3p1P2/3K3N w - - 0 1"
+                //"8/8/8/8/6p1/3k1pP1/3p1P2/3K3N w - - 0 1"
+                //"k2r4/8/8/8/2P1P3/2PKP3/2PPP3/8 w - - 0 1"
 
 
         ));
